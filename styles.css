@@ -19,13 +19,15 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
-.header-container,
+
+.header-background-container,
 .automate-onedesign-background-container,
 .footer-background-container {
     width: 100%;
     background-color: #000000;
 }
-.automatically-design-background-container {
+.automatically-design-background-container,
+.contact-us-container {
     width: 100%;
 }
 .contact-us-background-container {
@@ -38,14 +40,21 @@ body {
     align-items: center;
     justify-content: center;
 }
+.header-container {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+}
 .header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     padding: 1rem;
     background-color: #000000;
     color: #ffffff;
-    position: fixed;
 }
 .logo-text {
     color: #2a55ff;
@@ -66,6 +75,10 @@ body {
 .automate-onedesign-container,
 .automatically-design-container {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .automate-container {
     padding-top: 6rem;
@@ -91,7 +104,7 @@ body {
 .btn {
     border-radius: 0.5rem;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0.5rem;
     border: 1px solid white;
     cursor: pointer;
@@ -224,20 +237,27 @@ body {
     width: 80%;
     margin: auto;
     color: white;
-    font-size: 0.8rem;
 }
 .contact-content {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: auto;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 input:focus,
 textarea:focus {
     outline: none;
 }
 .input-content {
-    padding: 2rem 0rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -349,8 +369,12 @@ textarea:focus {
     display: none;
 }
 @media screen and (min-width: 400px) {
+    .automate-main-container {
+        width: 90%;
+    }
     .automate-container {
-        text-align: center;
+        text-align: left;
+        width: 84.7%;
     }
     .automate-heading {
         font-size: 2.5rem;
@@ -359,25 +383,27 @@ textarea:focus {
     .btn {
         font-size: 1.1rem;
     }
-    .btn1-container {
-        justify-content: center;
+    .onedesign-container,
+    .automatically-container,
+    .design-container {
+        width: 90%;
     }
     .onedesign-content {
         gap: 2rem;
+        justify-content: center;
     }
     .onedesign-left {
-        flex-wrap: nowrap;
         gap: 2rem;
+        justify-content: center;
     }
     .create-heading,
-    .logo-text {
-        font-size: 1.6rem;
-    }
+    .logo-text,
     .create-list {
-        flex-direction: column;
+        font-size: 1.6rem;
     }
     .create {
         font-size: 1.7rem;
+        padding: 2rem;
     }
     .box-img-div {
         flex: 1;
@@ -419,18 +445,6 @@ textarea:focus {
     }
     .footer-left {
         font-size: 1.4rem;
-    }
-}
-@media screen and (min-width: 570px) {
-    .automate-heading {
-        font-size: 3.2rem;
-        line-height: 3.5rem;
-    }
-}
-@media screen and (min-width: 623px) {
-    .automate-heading {
-        font-size: 3.5rem;
-        line-height: 4rem;
     }
 }
 @media screen and (min-width: 688px) {
@@ -483,6 +497,9 @@ textarea:focus {
     .logo-container {
         flex: 1;
     }
+    .logo {
+        justify-content: left;
+    }
     .nav-bar-container {
         flex: 2;
         font-size: 1.2rem;
@@ -522,10 +539,12 @@ textarea:focus {
     }
     .onedesign-left {
         flex-direction: column;
+        flex-wrap: nowrap;
         flex: 1;
     }
     .create-list {
         justify-content: left;
+        flex-direction: column;
         margin-left: 2rem;
     }
     .onedesign-img-container {
@@ -564,6 +583,7 @@ textarea:focus {
     }
     .footer {
         flex-direction: column;
+        padding: 4rem;
     }
     .footer-logo {
         justify-content: left;
@@ -610,8 +630,8 @@ textarea:focus {
     .nav-bar-container {
         font-size: 1.8rem;
     }
-    .btn-container{
-        justify-content: center;
+    .btn-container {
+        justify-content: right;
     }
     .logo-text,
     .create-heading,
@@ -623,23 +643,30 @@ textarea:focus {
         font-size: 1.6rem;
         border-radius: 1rem;
     }
+    .header,
+    .contact-form {
+        max-width: 140rem;
+        margin: auto;
+    }
+    .contact-us-background-container,
+    .automate-onedesign-background-container {
+        padding-bottom: 3rem;
+    }
+    .contact-content {
+        max-width: 115rem;
+        margin-top: 3rem;
+    }
     .automate-onedesign-container {
-        max-width: 1200px;
-        gap:3rem;
-        padding-bottom: 5rem;
+        max-width: 120rem;
         margin: auto;
     }
     .automatically-design-container {
-        max-width: 1100px;
-        margin: auto;
-    }
-    .contact-form-container {
-        max-width: 1400px;
+        max-width: 110rem;
         margin: auto;
     }
     .automate-container {
         padding-top: 5rem;
-        gap:4rem;
+        gap: 4rem;
         width: 71%;
         text-align: left;
     }
@@ -670,9 +697,9 @@ textarea:focus {
     }
     .onedesign-heading {
         padding-top: 5rem;
+        font-size: 4rem;
     }
-    .contact-heading,
-    .onedesign-heading {
+    .contact-heading {
         font-size: 5rem;
     }
     .create {
@@ -725,17 +752,16 @@ textarea:focus {
         font-size: 2.5rem;
     }
     .automatically-box-container {
+        width: 80%;
+        margin: auto;
         gap: 3rem;
     }
     .box-row {
         gap: 4rem;
     }
-    .contact-form {
-        align-items: center;
-    }
-    .input-content{
+    .input-content {
         padding: 5rem 0rem;
-        gap:4rem;
+        gap: 4rem;
     }
     .input-style {
         border-bottom: 1.5px solid #8ed6ff;
@@ -763,7 +789,8 @@ textarea:focus {
     }
     .footer {
         margin: auto;
-        max-width: 1200px;
+        max-width: 140rem;
+        padding: 6rem;
     }
     .footer-left,
     .footer-right {
